@@ -1,6 +1,6 @@
 #! /usr/bin/env python3
 
-from capitals import capitals.py,
+from mypackages import capitals.py,
 
 check_capital("Germany")
 check_capital("Honduras")
