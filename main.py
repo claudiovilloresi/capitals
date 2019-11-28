@@ -1,10 +1,18 @@
 #! /usr/bin/env python3
 
+import argparse
 from mypackages.capitals import check_capital, check_state
 
-check_capital("Germany")
-check_capital("Honduras")
-check_state("Rome")
-check_state("Tokyo")
 
 
+def parse_arguments():
+    parser = argparse.ArgumentParser()
+    parser.add_argument('State', help='The name of the state')
+    args = parser.parse_args()
+    return args
+
+
+if __name__ == '__main__':
+    args = parse_arguments()
+    cp = check_capital(args.State)
+    cs = check_state(args.State)
