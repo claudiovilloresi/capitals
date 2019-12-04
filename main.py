@@ -2,7 +2,7 @@
 
 import argparse
 from mypackages.capitals import check_capital
-valid_states = ['list_of_capital']
+valid_states = ['list_of_capitals']
 
 
 def parse_arguments():
@@ -15,4 +15,4 @@ def parse_arguments():
 if __name__ == '__main__':
     args = parse_arguments()
     cp = check_capital(args.State)
-    #print ('The capital of "{}" is "{}"' .format(args.State, cp)) 
+    #print ('The capital of "{}" is "{}"' .format(args.State, cp))
