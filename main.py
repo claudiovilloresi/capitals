@@ -1,18 +1,19 @@
 #! /usr/bin/env python3
 
 import argparse
-from mypackages.capitals import check_capital
-valid_states = ['list_of_capital']
+from mypackages.capitals import check_capital, check_state
+
 
 
 def parse_arguments():
     parser = argparse.ArgumentParser()
-    parser.add_argument('State', help='The name of the state',choices=valid_states)
+    parser.add_argument('-s', type=str, help='The name of the state')
+    parser.add_argument('-c', type=str, help='The name of the capital')
     args = parser.parse_args()
     return args
 
 
 if __name__ == '__main__':
     args = parse_arguments()
-    cp = check_capital(args.State)
-    #print ('The capital of "{}" is "{}"' .format(args.State, cp)) 
+    cp = check_capital(args.s)
+    cs = check_state(args.c)
