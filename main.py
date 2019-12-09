@@ -14,5 +14,7 @@ def parse_arguments():
 
 if __name__ == '__main__':
     args = parse_arguments()
-    cp = check_capital(args.s)
-    cs = check_state(args.c)
+    if args.s:
+        cp = check_capital(args.s)
+    else:
+        cs = check_state(args.c)
