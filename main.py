@@ -4,7 +4,6 @@ import argparse
 from mypackages.capitals import check_capital, check_state
 
 
-
 def parse_arguments():
     parser = argparse.ArgumentParser()
     parser.add_argument('-s', type=str, help='The name of the state')
