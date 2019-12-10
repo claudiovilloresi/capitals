@@ -1,5 +1,5 @@
 import unittest
-from main import parse_allowed_repos
+from main import parse_allowed_input
 import os
 
 
@@ -12,12 +12,12 @@ class TestMain(unittest.TestCase):
         f.close()
 
     def test_no_datafile(self):
-        u, r = parse_allowed_repos(datafile="/tmp/nonexistentfile-wewefwwe")
+        u, r = parse_allowed_input(datafile="/tmp/nonexistentfile-wewefwwe")
         self.assertFalse(u)
         self.assertFalse(r)
 
     def test_empty_datafie(self):
-        u, r = parse_allowed_repos(datafile=self.temporary_file)
+        u, r = parse_allowed_input(datafile=self.temporary_file)
         self.assertFalse(u)
         self.assertFalse(r)
 
