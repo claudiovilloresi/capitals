@@ -70,5 +70,9 @@ import pandas
 
 df = pandas.read_csv('list_of_capitals.csv')
 # print(df)
-
 df.to_csv("list_of_capitals.csv", index= False)
+
+
+
+
+
