@@ -2,8 +2,6 @@ import unittest
 from main import parse_allowed_input
 import os
 
-
-
 class TestMain(unittest.TestCase):
 
 #open the test
