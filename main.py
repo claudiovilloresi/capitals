@@ -8,12 +8,18 @@ data ='mypackages/list_of_capitals.csv'
 def parse_allowed_input(datafile=data):
   states = set()
   capitals = set()
-  with open(datafile) as csv_file:
-    csv_reader = csv.reader(csv_file, delimiter=',')
-    next(csv_reader)
-    for row in csv_reader:
-            states.add(row[0])
-            capitals.add(row[1])
+  try:
+      with open(datafile) as csv_file:
+        csv_reader = csv.reader(csv_file, delimiter=',')
+        try:
+            next(csv_reader)
+        except StopIteration:
+            return states, capitals
+        for row in csv_reader:
+                states.add(row[0])
+                capitals.add(row[1])
+  except FileNotFoundError:
+      pass
   return states, capitals
 
 def parse_arguments(states, capitals):
@@ -29,6 +35,5 @@ if __name__ == '__main__':
   args = parse_arguments(states, capitals)
   if args.s:
       cp = check_capital(args.s)
-  else: 
+  else:
       cs = check_state(args.c)
-
