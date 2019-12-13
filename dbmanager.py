@@ -1,3 +1,9 @@
+"""
+This module allows to create and populate a database
+with usernames and passwords.
+
+"""
+
 import sqlite3
 import hashlib
 import argparse
@@ -9,21 +15,27 @@ cursor = None
 
 
 def open_and_create():
+    """
+    Check the existance of a database of create a new one
+    with a data schema: username, password and salt.
+    """
     global conn
     global cursor
     conn = sqlite3.connect('sql.db')
     cursor = conn.cursor()
 
     try:
+        # Check if the table exists
         cursor.execute("SELECT * FROM user")
     except sqlite3.OperationalError:
-        # Create table
+        # Create table if does not exist
         cursor.execute('''CREATE TABLE user
                      (username TEXT, password TEXT, salt TEXT,
                       PRIMARY KEY (username))''')
 
 
 def parse_args():
+    """ Parse user inputs."""
     parser = argparse.ArgumentParser()
     parser.add_argument('-u', help="add a username (requires -p)",
                         required=False)
@@ -35,6 +47,7 @@ def parse_args():
 
 
 def save_new_username_correct(username, password):
+    """ Save the new username and password in the database if do not already exist. """
     global conn
     global cursor
     salt = str(random.random())
@@ -47,6 +60,7 @@ def save_new_username_correct(username, password):
 
 
 def check_for_username_correct(username, password):
+    """Ckeck for existing username and password to authenticate users for log-in. """
     global conn
     global cursor
     conn = sqlite3.connect('sql.db')

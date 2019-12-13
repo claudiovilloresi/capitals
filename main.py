@@ -10,6 +10,11 @@ db = 'sql.db'
 
 
 def parse_allowed_input(datafile=data):
+    """ Read data from csv file and create sets.
+        Key arguments:
+        - states: set of allowed states
+        - capitals: set of allowed capitals
+    """
     states = set()
     capitals = set()
     try:
@@ -28,6 +33,12 @@ def parse_allowed_input(datafile=data):
 
 
 def parse_arguments(states, capitals):
+    """ Parse user inputs:
+        -user: check username
+        -p: check password
+        -s: name of the states can be choosen from states set
+        -c: name of the capitals can be choosen from capitals set
+    """
     parser = argparse.ArgumentParser()
     parser.add_argument(
         '-user',
@@ -52,12 +63,16 @@ def parse_arguments(states, capitals):
 
 
 if __name__ == '__main__':
+    # Open the connection and if necessary create the users table
     open_and_create()
     states, capitals = parse_allowed_input()
     args = parse_arguments(states, capitals)
+    # If the user is authenticate to proceed:
     if check_for_username_correct(args.user, args.p):
+        # If user input is a state
         if args.s:
             cp = check_capital(args.s)
+        # If user input is a capital
         else:
             cs = check_state(args.c)
     else:
