@@ -1,3 +1,15 @@
+''' test_main.py module is the module made
+    for running tets on the main function parse_allowed_input.
+
+    Here after settin up a temporary file in which running the tests
+    are run two main tests:
+
+    1. test 1 is testing the datafile with a wrong datafile
+    2. test 2 is testing the datafile with an empy one.
+
+    The last function tears down the temporary file in
+    which all the tests were run. '''
+
 import unittest
 from main import parse_allowed_input
 import os
