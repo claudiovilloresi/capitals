@@ -1,5 +1,14 @@
+"""
+This module allow us to create a csv file with columns capital and state,
+that will be used in the main.py file to analyze the valid inputs.
+"""
+
 import csv
 import pandas
+
+"""
+Dictionary of States and Capitals.
+"""
 
 list_of_capitals = {'Aland Islands': 'Mariehamn',
                     'Albania': 'Tirana',
@@ -60,6 +69,11 @@ list_of_capitals = {'Aland Islands': 'Mariehamn',
                     'United Kingdom': 'London',
                     'Vatican City': 'Vatican City'}
 
+"""
+Creating the csv file, applying also the
+name of the columns: State and Capital.
+"""
+
 with open('list_of_capitals.csv', 'w') as f:
     fieldnames = ['State', 'Capital']
     writer = csv.DictWriter(f, fieldnames=fieldnames)
@@ -67,7 +81,17 @@ with open('list_of_capitals.csv', 'w') as f:
     data = [dict(zip(fieldnames, [k, v])) for k, v in list_of_capitals.items()]
     writer.writerows(data)
 
+"""
+The following line of code allow us to
+create a dataframe to store our csv file.
+"""
+
 df = pandas.read_csv('list_of_capitals.csv')
 print(df)
+
+"""
+This last pandas command stores the csv named
+list_of_capitals.csv in the directory
+"""
 
 df.to_csv("list_of_capitals.csv", index=False)

@@ -14,23 +14,9 @@ In order to *add* a specific user to the database you can use the ```dbmanager.p
 * -u: to add the username
 * -p: to Set the password for the given username
 
-In you want to *check* if your username and password have been successfully stored use the commands:
-
-* -c (adding also the username you used before)
-* -p (adding also the same password as before)
-
 _Adding a user example_
 ```
 python dbmanager.py -u Mario -p 10
-
-
-```
-
-_Checking a user example_
-```
-python dbmanager.py -c Mario -p 10
-
-
 ```
 
 ## 2. How to properly use the application
@@ -50,7 +36,6 @@ You have to type either -c or -s, not both of them (indeed, you can select eithe
 Type this in the command line with the data you prefer (whatever capital or state permitted):
 ```
 python main.py -user Mario -p 10 -c Rome
-
 ```
 
 It will give you a result like this one, if you are allowed to run the code:
@@ -165,6 +150,10 @@ Ran 2 tests in 0.002s
 OK
 ```
 
+## PEP-8
+
+All the python modules used to run and create the application follow the PEP-8 guidelines and set of rules. 
+
 ## Authors and Acknowledgement
 
 Thank you all for using our application!
@@ -174,3 +163,7 @@ Thank you all for using our application!
 * Possagno Alberto
 * Tomiazzo Matteo
 * Villoresi Claudio
+
+## License
+
+MIT License
