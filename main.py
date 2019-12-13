@@ -21,9 +21,9 @@ def parse_allowed_input(datafile=data):
         for row in csv_reader:
                 states.add(row[0])
                 capitals.add(row[1])
-   except FileNotFoundError:
+  except FileNotFoundError:
        pass
-   return states, capitals
+  return states, capitals
 
 def parse_arguments(states, capitals):
     parser = argparse.ArgumentParser()
