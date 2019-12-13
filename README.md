@@ -1,6 +1,6 @@
 # Let's discover the European Capitals!
 
-In this repository you can find a file named ```main.py``` that, with a proper input, allows the user to receive back the name of a capital or a state of Europe, by selecting only one of the two possible optional arguments in order to receive back the corrisponding value.
+In this repository you can find a file named ```main.py``` that, with a proper input, allows the user to enter a country or capital and receive, in return, the corresponding European capital or country.
 
 You can find also a file named ```dbmanager.py``` that requires you to insert a username and a password before doing anything else.
 
@@ -35,25 +35,33 @@ python dbmanager.py -c Mario -p 10
 
 ## 2. How to properly use the application
 
-Once done the previous step, you can launch the file main.py, which will require some input as well.
+Once done the previous step, you can launch the file ```main.py```, which will require some input as well.
 In this case, the steps are the following:
 * -user = the user you added to the database
 * -p = your corresponding password
+
 AND
 * -c = to insert the capital
-OR
+<br>OR
 * -s = to insert the state
 
 You have to type either -c or -s, not both of them (indeed, you can select either a capital or a state).
 
 Type this in the command line with the data you prefer (whatever capital or state permitted):
 ```
-python main.py -u Mario -p 10 -c Rome
+python main.py -user Mario -p 10 -c Rome
 
 ```
 
-It will give you a result like this one:
-
+It will give you a result like this one, if you are allowed to run the code:
+```
+User is present, password is valid
+The European state whose capital is Rome is Italy
+```
+Otherwise:
+```
+Username does not exist or password is incorrect
+```
 
 If you find any trouble in doing these steps or if you need further info, please write ```-h``` or ```--help```. This command will give a hint on how to proceed.
 
@@ -136,7 +144,7 @@ Commands to use in *dbmanager.py*
 Commands to use in *main.py*
 
 * -h, --help: shows the valid input for the two parameters
-* -u: asks the user to input the username
+* -user: asks the user to input the username
 * -p: asks for the correct password
 * -c: give the possibility to choose a capital to discover the state
 * -s: give the possibility to choose a state to discover its capital
@@ -166,4 +174,3 @@ Thank you all for using our application!
 * Possagno Alberto
 * Tomiazzo Matteo
 * Villoresi Claudio
-
