@@ -12,23 +12,20 @@ In order to *add* a specific user to the database you can use the ```dbmanager.p
 * -u: to add the username
 * -p: to Set the password for the given username
 
-In you want to *check* if your username and password have been successfully stored use the commands:
-
-* -c
-* -p
-
 _Adding a user example_
 ```
-python dbmanager.py -u ErPupone -p 10 -c Rome
-
-
+python dbmanager.py -u ErCapitano -p 10 -c Rome
 ```
+
+In you want to *check* if your username and password have been successfully stored use the commands:
+
+* -c: to check the username
+* -p: to check the password
 
 _Checking a user example_
 ```
-python dbmanager.py -c ErPupone -p 10 -c Rome
-
-
+python dbmanager.py -c ErCapitano -p 10 -c Rome
+User is present, password is valid
 ```
 
 ## 2. How to properly use the application
@@ -42,12 +39,14 @@ In this case, the steps are the following:
 
 Type this in the command line with the data you prefer (whatever capital or state permitted):
 ```
-python main.py -u ErPupone -p 10 -c Rome
-
+python main.py -u ErCapitano -p 10 -c Rome
 ```
 
 It will give you a result like this one:
-
+```
+User is present, password is valid
+The European state whose capital is Rome is Italy
+```
 
 If you find any trouble in doing these steps or if you need further info, please write ```-h``` or ```--help```. This command will give a hint on how to proceed.
 
