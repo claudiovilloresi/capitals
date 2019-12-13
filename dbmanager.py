@@ -7,6 +7,7 @@ import random
 conn = None
 cursor = None
 
+
 def open_and_create():
     global conn
     global cursor
@@ -33,7 +34,6 @@ def parse_args():
     return parser.parse_args()
 
 
-
 def save_new_username_correct(username, password):
     global conn
     global cursor
@@ -47,27 +47,28 @@ def save_new_username_correct(username, password):
 
 
 def check_for_username_correct(username, password):
-     global conn
-     global cursor
-     conn = sqlite3.connect('sql.db')
-     cursor = conn.cursor()
-     row = cursor.execute("SELECT * FROM user WHERE username = ?",(username,))
-     results = row.fetchall()
-     if results:
-            salt = str(results[0][2])
-            concat = salt + password
-            for i in range(1000):
-                digest = hashlib.sha256(concat.encode('utf-8')).hexdigest()
+    global conn
+    global cursor
+    conn = sqlite3.connect('sql.db')
+    cursor = conn.cursor()
+    row = cursor.execute("SELECT * FROM user WHERE username = ?", (username,))
+    results = row.fetchall()
+    if results:
+        salt = str(results[0][2])
+        concat = salt + password
+        for i in range(1000):
+            digest = hashlib.sha256(concat.encode('utf-8')).hexdigest()
 
-            if digest == results[0][1]:
-               print("User is present, password is valid")
-               return True
+        if digest == results[0][1]:
+            print("User is present, password is valid")
+            return True
 
-            else:
-               return False
-     else:
+        else:
             return False
-     conn.commit()
+    else:
+        return False
+    conn.commit()
+
 
 if __name__ == '__main__':
     args = parse_args()
