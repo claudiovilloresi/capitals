@@ -1,5 +1,5 @@
 """
-This module allow us to create a csv file with columns capital and state,
+This module allow us to create a csv file with two columns, Capital and State,
 that will be used in the main.py file to analyze the valid inputs.
 """
 
@@ -94,4 +94,4 @@ This last pandas command stores the csv named
 list_of_capitals.csv in the directory
 """
 
-df.to_csv("list_of_capitals.csv", index = False)
+df.to_csv("list_of_capitals.csv", index=False)
