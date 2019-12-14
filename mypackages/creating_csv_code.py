@@ -94,4 +94,4 @@ This last pandas command stores the csv named
 list_of_capitals.csv in the directory
 """
 
-df.to_csv("list_of_capitals.csv", index=False)
+df.to_csv("list_of_capitals.csv", index = False)
