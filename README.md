@@ -52,7 +52,7 @@ If you find any trouble in doing these steps or if you need further info, please
 
 ## Data Files
 
-The user can choose between a wide range of capitals or states of Europe and the they can be found in _.csv_ file located in: ```mypackage/list_of_capitals.csv```.
+The user can choose between a wide range of capitals or states of Europe and they can be found in _.csv_ file located in: ```mypackage/list_of_capitals.csv```.
 
 *Valid states and capitals:*
 
@@ -124,7 +124,6 @@ Commands to use in *dbmanager.py*
 * -h, --help: show the possible allowed arguments
 * -u: give the possibility to add the username
 * -p: Set the password for the given username
-* -c: check if a username is present in the database
 
 Commands to use in *main.py*
 
@@ -137,8 +136,8 @@ Commands to use in *main.py*
 ## Testing
 
 Tests on parts of the code are provided in the folder ```mypackages/tests/```, the module used to test ```main.py``` is ```test_main.py```.
-Before you run the tests, you need to move inside capitals (so, ```cd capitals```) and then run: ```python3 -m unittest -v -b tests/test_main.py```
-
+The command line to run the tests is: ```python3 -m unittest -v -b tests/test_main.py```
+N.B. In order to properly run the code, use ```python3```
 ```
 python3 -m unittest -v -b tests/test_main.py
 test_empty_datafie (tests.test_main.TestMain) ... ok
@@ -152,7 +151,7 @@ OK
 
 ## PEP-8
 
-All the python modules used to run and create the application follow the PEP-8 guidelines and set of rules. 
+All the python modules used to run and create the application follow the PEP-8 guidelines and set of rules.
 
 ## Authors and Acknowledgement
 
