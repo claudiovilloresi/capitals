@@ -3,8 +3,10 @@
 import argparse
 import csv
 import sqlite3
-from mypackages.capitals import check_capital, check_state
-from dbmanager import check_for_username_correct, open_and_create, parse_args
+from mypackages.capitals import check_capital
+from mypackages.capitals import check_state
+from dbmanager import check_for_username_correct, open_and_create
+from dbmanager import open_and_create
 data = 'mypackages/list_of_capitals.csv'
 db = 'sql.db'
 
