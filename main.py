@@ -5,7 +5,7 @@ import csv
 import sqlite3
 from mypackages.capitals import check_capital
 from mypackages.capitals import check_state
-from dbmanager import check_for_username_correct, open_and_create
+from dbmanager import check_for_username_correct
 from dbmanager import open_and_create
 data = 'mypackages/list_of_capitals.csv'
 db = 'sql.db'
